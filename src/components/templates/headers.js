@@ -1,6 +1,6 @@
 $("#app-header").html(`
   <div class="logo">
-    <img src="./src/assets/img/logo.png" alt="" />
+    <img src="${newPath}assets/img/logo.png" alt="company-logo" />
   </div>
   <div class="menu-toggle">
     <div></div>
@@ -243,9 +243,9 @@ $("#app-header").html(`
     <div class="dropdown">
       <div class="user col align-self-end">
         <img
-          src="./src/assets/img/faces/1.jpg"
+          src="${newPath}assets/img/faces/1.jpg"
           id="userDropdown"
-          alt=""
+          alt="user-avatar"
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"

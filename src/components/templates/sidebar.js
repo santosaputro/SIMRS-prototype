@@ -1,49 +1,57 @@
-$(() => {
-  renderSidebarItem();
-});
+$(() => renderSidebarItem());
 
 const globalMenu = [
-  { name: "Home", icon: "nav-icon i-File-Chart" },
-  { name: "Pendaftaran", icon: "nav-icon i-File-Chart" },
+  { name: "Home", icon: "i-Bar-Chart" },
+  { name: "Pendaftaran", icon: "i-File-Chart" },
   {
     name: "Poli Klinik",
     child: [
-      { name: "Entry poli klinik", icon: "nav-icon i-File-Chart" },
-      { name: "Jadwal dokter", icon: "nav-icon i-File-Chart" },
-      { name: "Rekam medik", icon: "nav-icon i-File-Chart" },
+      {
+        name: "Entry poli klinik",
+        icon: "i-Split-Horizontal-2-Window",
+      },
+      { name: "Jadwal dokter", icon: "i-Split-Horizontal-2-Window" },
+      { name: "Rekam medik", icon: "i-Split-Horizontal-2-Window" },
     ],
-    icon: "nav-icon i-File-Chart",
+    icon: "i-File-Chart",
   },
   {
     name: "Rawat Inap",
     child: [
-      { name: "Data kamar inap", icon: "nav-icon i-File-Chart" },
-      { name: "Keteresdian kamar inap", icon: "nav-icon i-File-Chart" },
+      { name: "Data kamar inap", icon: "i-Split-Horizontal-2-Window" },
+      {
+        name: "Keteresdian kamar inap",
+        icon: "i-Split-Horizontal-2-Window",
+      },
     ],
-    icon: "nav-icon i-File-Chart",
+    icon: "i-File-Chart",
   },
   {
     name: "Farmasi",
     child: [
-      { name: "Daftar Obat", icon: "nav-icon i-File-Chart" },
-      { name: "Pembelian Obat", icon: "nav-icon i-File-Chart" },
-      { name: "Pemakaian Obat", icon: "nav-icon i-File-Chart" },
-      { name: "Kartu Stock Obat", icon: "nav-icon i-File-Chart" },
+      { name: "Daftar Obat", icon: "i-Split-Horizontal-2-Window" },
+      { name: "Pembelian Obat", icon: "i-Split-Horizontal-2-Window" },
+      { name: "Pemakaian Obat", icon: "i-Split-Horizontal-2-Window" },
+      {
+        name: "Kartu Stock Obat",
+        icon: "i-Split-Horizontal-2-Window",
+      },
     ],
-    icon: "nav-icon i-File-Chart",
+    icon: "i-File-Chart",
   },
-  { name: "Laboratorium", icon: "nav-icon i-File-Chart" },
-  { name: "Kasir", icon: "nav-icon i-File-Chart" },
+  { name: "Laboratorium", icon: "i-File-Chart" },
+  { name: "Kasir", icon: "i-File-Chart" },
 ];
 
 const renderSidebarItem = () => {
   let parentItems = [];
   let childItems = [];
 
-  globalMenu.forEach(({ icon, name, child }) => {
+  globalMenu.forEach(({ icon, name, child }, index) => {
     const active = false;
-    const childTarget = child && name.toLowerCase().replace(/ /g, "-");
-    const urlTarget = null;
+    const childTarget = child && combineString(name);
+    const urlTarget =
+      index > 0 ? `${newPath}pages/${combineString(name)}` : `../${newPath}`;
 
     parentItems.push(
       sidebarParentItem({ active, child, childTarget, urlTarget, name, icon })
@@ -52,18 +60,22 @@ const renderSidebarItem = () => {
     if (child) {
       const childs = child
         .map(({ icon, name }) =>
-          sidebarSubItem({ icon, name, urlTarget: urlTarget || null })
+          sidebarSubItem({
+            icon,
+            name,
+            urlTarget: `${newPath}pages/${childTarget}/${combineString(name)}`,
+          })
         )
         .join("");
 
       childItems.push(`
-      <ul 
-        class="childNav" 
-        data-parent="${childTarget}" 
-        style="display: none"
-      >
-        ${childs}
-      </ul>`);
+        <ul 
+          class="childNav" 
+          data-parent="${childTarget}" 
+          style="display: none"
+        >
+          ${childs}
+        </ul>`);
     }
   });
 
@@ -107,8 +119,11 @@ const sidebarParentItem = (props) => `
     class="nav-item${props.active ? " active" : ""}" 
     ${props.child ? `data-item="${props.childTarget}"` : ""}
   >
-    <a class="nav-item-hold" href="${props.urlTarget || "#"}">
-      <i class="${props.icon}"></i>
+    <a 
+      class="nav-item-hold" 
+      href="${!props.child ? props.urlTarget || "#" : "#"}"
+    >
+      <i class="nav-icon ${props.icon}"></i>
       <span class="nav-text">${props.name}</span>
     </a>
     <div class="triangle"></div>
@@ -117,7 +132,9 @@ const sidebarParentItem = (props) => `
 const sidebarSubItem = ({ icon, name, urlTarget }) => `
   <li class="nav-item">
     <a href="${urlTarget || "#"}">
-      <i class="${icon}"></i>
+      <i class="nav-icon ${icon}"></i>
       <span class="item-name">${name}</span>
     </a>
   </li>`;
+
+const combineString = (string) => string.toLowerCase().replace(/ /g, "-");

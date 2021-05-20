@@ -3,8 +3,8 @@ const breadcrumb = ({ pages, url, title, active }) =>
     <div class="breadcrumb">
       <ul>
         ${
-          pages !== ""
-            ? `<li><a id="pages" href="${url}">${title}</a></li>`
+          pages && pages !== ""
+            ? `<li><a id="${pages}" href="${url}">${title}</a></li>`
             : ""
         }
         <li>${active}</li>

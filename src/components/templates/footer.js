@@ -18,8 +18,8 @@ $("#app-footer").html(`
       </div>
       <img
         class="logo"
-        src="./src/assets/templates/images/logo.png"
-        alt=""
+        src="${newPath}assets/templates/images/logo.png"
+        alt="footer-logo"
       />
     </div>
-  </div>`)
+  </div>`);

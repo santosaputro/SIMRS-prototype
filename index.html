@@ -33,7 +33,6 @@
     <div class="app-admin-wrap layout-sidebar-large">
       <!-- Main Header -->
       <div class="main-header" id="app-header"></div>
-      This is header compoents
 
       <!-- sidebar-content -->
       <div class="side-content-wrap" id="app-sidebar"></div>
@@ -41,18 +40,17 @@
       <!-- Body Content -->
       <div class="main-content-wrap sidenav-open d-flex flex-column">
         <div class="main-content">
-          This is main content
           <!-- Breadcrumb -->
-          <!-- <?php if(isset($breadcrumb) && $breadcrumb)
-            $this->load->view("templates/breadcrumb", $breadcrumb) ?> -->
+          <div id="breadcrumb"></div>
 
           <!-- main content here -->
-          <!-- <?php 
-            $res =  $this->db->query("SELECT 'transaction_type', SUM('total') FROM 'invoice' GROUP BY 'transaction_type'");
-            echo($res);
-          ?>
-          <?php	if(isset($mainContent) && $mainContent)
-            $this->load->view($mainContent) ?> -->
+          <div class="row" id="app-main">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">This is main content</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Footer -->
@@ -61,6 +59,7 @@
       </div>
     </div>
 
+    <script src="./src/components/libraries/helper.js"></script>
     <script src="./src/components/config/page-config.js"></script>
     <script src="./src/components/templates/headers.js"></script>
     <script src="./src/components/templates/sidebar.js"></script>
