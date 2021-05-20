@@ -1,5 +1,18 @@
+const port = location.port !== "";
+const endpoint = port
+  ? "live server"
+  : location.origin === "https://santosaputro.github.io"
+  ? "github"
+  : location.origin === "file://"
+  ? "directory"
+  : null;
+
+console.log(port);
+
 const pathArr = location.pathname.split("/");
-const pathLength = pathArr.length - 3;
+const pathLength =
+  endpoint === "github" ? pathArr.length - 2 : pathArr.length - 3;
+// const pathLength = port ? pathArr.length - 3 :;
 const newPath =
   pathLength > 0
     ? Array(pathLength)
