@@ -23,6 +23,9 @@
     />
 
     <!-- <link rel="stylesheet" href="../../assets/templates/css/custom-style.css" /> -->
+    <script>
+      const originPath = "../../";
+    </script>
     <script src="../../assets/templates/js/plugins/jquery-3.3.1.min.js"></script>
     <script src="../../assets/templates/js/plugins/clipboard.min.js"></script>
     <script src="../../components/libraries/libs.js"></script>
@@ -40,13 +43,79 @@
       <div class="main-content-wrap sidenav-open d-flex flex-column">
         <div class="main-content">
           <!-- Breadcrumb -->
-          <div id="breadcrumb"></div>
+          <div>
+            <div id="breadcrumb"></div>
+            <div style="position: absolute; top: 32px; right: 31px">
+              <div
+                class="btn btn-sm btn-outline-primary px-3"
+                data-toggle="modal"
+                data-target="#exampleModal"
+              >
+                Tambah Pasien
+              </div>
+            </div>
+          </div>
 
           <!-- main content here -->
           <div class="row" id="app-main">
             <div class="col-12">
               <div class="card">
-                <div class="card-body">This is main content</div>
+                <div class="card-body">
+                  <div class="ul-widget__head">
+                    <div class="ul-widget__head-label">
+                      <h3 class="ul-widget__head-title">Daftar Pasien</h3>
+                    </div>
+                    <div class="ul-widget__head-toolbar">
+                      <div class="form-group">
+                        <select class="custom-select" id="filter">
+                          <option value="" disabled selected>
+                            -- Pilih Golongan Pasien --
+                          </option>
+                          <option value="umum">Umum</option>
+                          <option value="bpjs">BPJS</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">No</th>
+                          <th scope="col">Nomor Pasien</th>
+                          <th scope="col">Nama Pasien</th>
+                          <th scope="col">Alamat</th>
+                          <th scope="col">Umur</th>
+                          <th scope="col">Jenis Kelamin</th>
+                          <th scope="col">No Ktp</th>
+                          <th scope="col">Golongan Pasien</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr scope="row">
+                          <td>1</td>
+                          <td>P000001</td>
+                          <td>Parto</td>
+                          <td>Jln Kemerdekaan No 1</td>
+                          <td>20</td>
+                          <td>Laki-Laki</td>
+                          <td>12094381324</td>
+                          <td>Umum</td>
+                        </tr>
+                        <tr scope="row">
+                          <td>2</td>
+                          <td>P000002</td>
+                          <td>Parman</td>
+                          <td>Jln Kemerdekaan No 1</td>
+                          <td>20</td>
+                          <td>Laki-Laki</td>
+                          <td>12094381324</td>
+                          <td>BPJS</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -57,6 +126,112 @@
         <div class="app-footer" id="app-footer"></div>
       </div>
     </div>
+
+    <section>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="add modal"
+        data-backdrop="static"
+        data-keyboard="false"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="add modal">Tambah Pasien</h5>
+              <button
+                class="close"
+                type="button"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label" for="inputEmail3">
+                    Nomor Pasien
+                  </label>
+                  <div class="col-sm-7">
+                    <input class="form-control" id="inputEmail3" type="text" />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label" for="inputEmail3">
+                    Nama Pasien
+                  </label>
+                  <div class="col-sm-7">
+                    <input class="form-control" id="inputEmail3" type="text" />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label" for="inputEmail3">
+                    Alamat
+                  </label>
+                  <div class="col-sm-7">
+                    <input class="form-control" id="inputEmail3" type="text" />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label" for="inputEmail3">
+                    Umur
+                  </label>
+                  <div class="col-sm-7">
+                    <input class="form-control" id="inputEmail3" type="text" />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label" for="inputEmail3">
+                    Jenis Kelamin
+                  </label>
+                  <div class="col-sm-7">
+                    <input class="form-control" id="inputEmail3" type="text" />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label" for="inputEmail3">
+                    No. KTP
+                  </label>
+                  <div class="col-sm-7">
+                    <input class="form-control" id="inputEmail3" type="text" />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label" for="inputEmail3">
+                    Golongan Pasien
+                  </label>
+                  <div class="col-sm-7">
+                    <select class="custom-select" id="filter">
+                      <option value="" disabled selected>
+                        -- Pilih Golongan Pasien --
+                      </option>
+                      <option value="umum">Umum</option>
+                      <option value="bpjs">BPJS</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="text-right">
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  data-dismiss="modal"
+                >
+                  Batal
+                </button>
+                <button class="btn btn-outline-primary ml-2" type="button">
+                  Simpan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script src="../../components/libraries/helper.js"></script>
     <script src="../../components/config/page-config.js"></script>
