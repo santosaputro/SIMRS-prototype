@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" dir="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SIMRS</title>
+    <link
+      rel="stylesheet"
+      href="../../../assets/templates//css/plugins/tempusdominus-bootstrap-4.min.css"
+    />
+    <link
+      href="../../../assets/templates/css/themes/lite-purple.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../../../assets/templates/css/plugins/perfect-scrollbar.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="../../../assets/templates/css/plugins/toastr.css"
+    />
+
+    <!-- <link rel="stylesheet" href="../../../assets/templates/css/custom-style.css" /> -->
+    <script>
+      const originPath = "../../../";
+    </script>
+    <script src="../../../assets/templates/js/plugins/jquery-3.3.1.min.js"></script>
+    <script src="../../../assets/templates/js/plugins/clipboard.min.js"></script>
+    <script src="../../../components/libraries/libs.js"></script>
+  </head>
+
+  <body class="text-left">
+    <div class="app-admin-wrap layout-sidebar-large">
+      <!-- Main Header -->
+      <div class="main-header" id="app-header"></div>
+
+      <!-- sidebar-content -->
+      <div class="side-content-wrap" id="app-sidebar"></div>
+
+      <!-- Body Content -->
+      <div class="main-content-wrap sidenav-open d-flex flex-column">
+        <div class="main-content">
+          <!-- Breadcrumb -->
+          <div>
+            <div id="breadcrumb"></div>
+          </div>
+
+          <!-- main content here -->
+          <div id="app-main">
+            <div class="row mb-4">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="ul-widget__head">
+                      <div class="ul-widget__head-label">
+                        <h3 class="ul-widget__head-title">
+                          Daftar Harga Layanan Kamar Inap
+                        </h3>
+                        <br />
+                      </div>
+                      <div class="ul-widget__head-toolbar">
+                        <div class="form-group">
+                          <select class="custom-select" id="filter">
+                            <option value="" disabled="" selected="">
+                              -- Pilih Jenis Kamar --
+                            </option>
+                            <option value="umum">Anggrek</option>
+                            <option value="umum">Melati</option>
+                            <option value="umum">Mawar</option>
+                            <option value="umum">Kantil</option>
+                            <option value="umum">Kenanga</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th
+                              scope="col"
+                              style="white-space: nowrap; width: 1%"
+                            >
+                              No
+                            </th>
+                            <th scope="col">Jenis Kamar</th>
+                            <th scope="col">Golongan Kamar</th>
+                            <th scope="col">Nomor Kamar</th>
+                            <th scope="col">Biaya</th>
+                            <th scope="col">Opsi</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr scope="row">
+                            <td>1</td>
+                            <td>Anggrek</td>
+                            <td>VIP</td>
+                            <td>101</td>
+                            <td>Rp. 700.000/hari</td>
+                            <td>
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#exampleModal1"
+                                style="white-space: nowrap"
+                              >
+                                Edit
+                              </a>
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#exampleModal2"
+                                style="white-space: nowrap"
+                                class="text-danger ml-3"
+                              >
+                                Hapus
+                              </a>
+                            </td>
+                          </tr>
+                          <tr scope="row">
+                            <td>1</td>
+                            <td>Anggrek</td>
+                            <td>Kelas I</td>
+                            <td>102</td>
+                            <td>Rp. 500.000/hari</td>
+                            <td>
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#exampleModal1"
+                                style="white-space: nowrap"
+                              >
+                                Edit
+                              </a>
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#exampleModal2"
+                                style="white-space: nowrap"
+                                class="text-danger ml-3"
+                              >
+                                Hapus
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="ul-widget__head">
+                      <div class="ul-widget__head-label">
+                        <h3 class="ul-widget__head-title">
+                          Biaya Layanan Unit
+                        </h3>
+                        <br />
+                      </div>
+                      <div class="ul-widget__head-toolbar"></div>
+                    </div>
+
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th
+                              scope="col"
+                              style="white-space: nowrap; width: 1%"
+                            >
+                              No
+                            </th>
+                            <th scope="col">Jenis Layanan</th>
+                            <th scope="col">Biaya</th>
+                            <th scope="col">Opsi</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr scope="row">
+                            <td>1</td>
+                            <td>Pendaftaran</td>
+                            <td>Rp. 50.000</td>
+                            <td>
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#exampleModal1"
+                                style="white-space: nowrap"
+                              >
+                                Edit
+                              </a>
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#exampleModal2"
+                                style="white-space: nowrap"
+                                class="text-danger ml-3"
+                              >
+                                Hapus
+                              </a>
+                            </td>
+                          </tr>
+                          <tr scope="row">
+                            <td>2</td>
+                            <td>Konsultasi Dokter</td>
+                            <td>Rp. 80.000</td>
+                            <td>
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#exampleModal1"
+                                style="white-space: nowrap"
+                              >
+                                Edit
+                              </a>
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#exampleModal2"
+                                style="white-space: nowrap"
+                                class="text-danger ml-3"
+                              >
+                                Hapus
+                              </a>
+                            </td>
+                          </tr>
+                          <tr scope="row">
+                            <td>3</td>
+                            <td>USG</td>
+                            <td>Rp. 50.000</td>
+                            <td>
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#exampleModal1"
+                                style="white-space: nowrap"
+                              >
+                                Edit
+                              </a>
+                              <a
+                                href="#"
+                                data-toggle="modal"
+                                data-target="#exampleModal2"
+                                style="white-space: nowrap"
+                                class="text-danger ml-3"
+                              >
+                                Hapus
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="flex-grow-1"></div>
+        <div class="app-footer" id="app-footer"></div>
+      </div>
+    </div>
+
+    <script src="../../../components/libraries/helper.js"></script>
+    <script src="../../../components/config/page-config.js"></script>
+    <script src="../../../components/templates/headers.js"></script>
+    <script src="../../../components/templates/sidebar.js"></script>
+    <script src="../../../components/templates/footer.js"></script>
+    <script src="../../../assets/templates/js/plugins/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/templates/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="../../../assets/templates/js/scripts/script.min.js"></script>
+    <script src="../../../assets/templates/js/scripts/sidebar.large.script.min.js"></script>
+    <script src="../../../assets/templates/js/plugins/echarts.min.js"></script>
+    <script src="../../../assets/templates/js/scripts/echart.options.min.js"></script>
+    <script src="../../../assets/templates/js/scripts/customizer.script.min.js"></script>
+    <script src="../../../assets/templates/js/plugins/toastr.min.js"></script>
+    <script src="../../../assets/templates/js/plugins/moment.min.js"></script>
+    <script src="../../../assets/templates/js/plugins/moment-local-id.js"></script>
+    <script src="../../../assets/templates/js/plugins/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="../../../assets/templates/js/plugins/jquery.mask.js"></script>
+  </body>
+</html>

@@ -7,7 +7,7 @@
     <title>SIMRS</title>
     <link
       rel="stylesheet"
-      href="../../../assets/templates//css/plugins/tempusdominus-bootstrap-4.min.css"
+      href="../../../assets/templates/css/plugins/tempusdominus-bootstrap-4.min.css"
     />
     <link
       href="../../../assets/templates/css/themes/lite-purple.css"
@@ -43,13 +43,191 @@
       <div class="main-content-wrap sidenav-open d-flex flex-column">
         <div class="main-content">
           <!-- Breadcrumb -->
-          <div id="breadcrumb"></div>
+          <div>
+            <div id="breadcrumb"></div>
+            <div style="position: absolute; top: 32px; right: 31px">
+              <div
+                class="btn btn-sm btn-outline-primary px-3"
+                data-toggle="modal"
+                data-target="#exampleModal"
+              >
+                Entry Layanan Tindakan Pasien
+              </div>
+            </div>
+          </div>
 
           <!-- main content here -->
           <div class="row" id="app-main">
             <div class="col-12">
               <div class="card">
-                <div class="card-body">This is main content</div>
+                <div class="card-body">
+                  <div class="ul-widget__head">
+                    <div class="ul-widget__head-label">
+                      <h3 class="ul-widget__head-title">Rekam Medik Pasien</h3>
+                      <br />
+                    </div>
+                    <div class="ul-widget__head-toolbar"></div>
+                  </div>
+
+                  <div id="search-table-content">
+                    <div class="text-center my-3">
+                      Inputkan Nomor atau Nama Pasien untuk mencari Rekam Medik
+                    </div>
+                    <div class="row mb-3 text-center">
+                      <div class="col-md-4 offset-md-4">
+                        <div class="form-group">
+                          <div class="input-group">
+                            <input
+                              type="text"
+                              class="form-control form-control-sm"
+                              placeholder="Nomor/Nama Pasien"
+                              aria-describedby="basic-addon2"
+                            />
+                            <div class="btn-group" role="group">
+                              <button
+                                class="btn btn-sm btn-secondary"
+                                type="button"
+                                id="search-table-content-button"
+                              >
+                                Cari
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="table-content" style="display: none">
+                    <div class="table-responsive my-3">
+                      <table>
+                        <tr>
+                          <td>Nomor Pasien</td>
+                          <td class="pl-3">P00001</td>
+                        </tr>
+                        <tr>
+                          <td>Nama pasien</td>
+                          <td class="pl-3">Parman</td>
+                        </tr>
+                        <tr>
+                          <td>Alamat</td>
+                          <td class="pl-3">Jl. Merdeka No 1</td>
+                        </tr>
+                        <tr>
+                          <td>Umur</td>
+                          <td class="pl-3">20</td>
+                        </tr>
+                        <tr>
+                          <td>Jenis Kelamin</td>
+                          <td class="pl-3">Laki-Laki</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Tanggal</th>
+                            <th scope="col">Unit Layanan</th>
+                            <th scope="col">Gejala Medis</th>
+                            <th scope="col">Tindakan Medis</th>
+                            <th scope="col">Resep Obat</th>
+                            <th scope="col">Dokter</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>1/1/2021</td>
+                            <td>Pendaftaran</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>1/1/2021</td>
+                            <td>Poli Kandungan</td>
+                            <td>Kontrol Rutin</td>
+                            <td>
+                              <ol class="pl-3 mb-0">
+                                <li>USG</li>
+                              </ol>
+                            </td>
+                            <td>
+                              <ol class="pl-3 mb-0">
+                                <li>Multivitamin C1000</li>
+                                <li>Multivitamin E</li>
+                              </ol>
+                            </td>
+                            <td>dr. Ratna</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>1/5/2021</td>
+                            <td>Poli Umum</td>
+                            <td>Kepala Pusing</td>
+                            <td>
+                              <ol class="pl-3 mb-0">
+                                <li>Tensi</li>
+                              </ol>
+                            </td>
+                            <td>
+                              <ol class="pl-3 mb-0">
+                                <li>Paracetamol</li>
+                              </ol>
+                            </td>
+                            <td>dr. Parto</td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>1/5/2021</td>
+                            <td>Laboratorium</td>
+                            <td>-</td>
+                            <td>
+                              <ol class="pl-3 mb-0">
+                                <li>Cek Darah</li>
+                                <li>Cek Urin</li>
+                              </ol>
+                            </td>
+                            <td>-</td>
+                            <td>dr. Budi</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <!-- paginations -->
+                    <nav aria-label="Page navigation example">
+                      <ul class="pagination">
+                        <li class="page-item disabled">
+                          <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">«</span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                        </li>
+                        <li class="page-item active">
+                          <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">»</span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -60,6 +238,219 @@
         <div class="app-footer" id="app-footer"></div>
       </div>
     </div>
+
+    <!-- Modal -->
+    <section>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="add modal"
+        data-backdrop="static"
+        data-keyboard="false"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="add modal">
+                Entry Layanan Tindakan Pasien
+              </h5>
+              <button
+                class="close"
+                type="button"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Nomor Pasien
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="text"
+                      value="P000002"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Nama Pasien
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="text"
+                      value="Parman"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Alamat
+                  </label>
+                  <div class="col-sm-7">
+                    <textarea class="form-control" id="inputEmail3" type="text">
+Jln Kemerdekaan No 1</textarea
+                    >
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Umur
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="text"
+                      value="20"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Jenis Kelamin
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="text"
+                      value="Laki-Laki"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Tanggal Tindakan
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="datetime"
+                      value="12094381324"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Unit Layanan
+                  </label>
+                  <div class="col-sm-7">
+                    <select class="custom-select" id="filter">
+                      <option value="" disabled selected>
+                        -- Pilih Layanan --
+                      </option>
+                      <option value="umum">Poli Umum</option>
+                      <option value="umum">Poli Anak</option>
+                      <option value="umum">Poli Dalam</option>
+                      <option value="bpjs">Poli Digesti</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Tindakan Layanan
+                  </label>
+                  <div class="col-sm-7">
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        class="custom-control-input"
+                        id="bad-pasien"
+                        type="checkbox"
+                        checked=""
+                      />
+                      <label class="custom-control-label" for="bad-pasien">
+                        USG
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        class="custom-control-input"
+                        id="bad-penunggu"
+                        type="checkbox"
+                        checked=""
+                      />
+                      <label class="custom-control-label" for="bad-penunggu">
+                        Tensi
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        class="custom-control-input"
+                        id="ac"
+                        type="checkbox"
+                      />
+                      <label class="custom-control-label" for="ac">
+                        Cek Darah
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        class="custom-control-input"
+                        id="tv"
+                        type="checkbox"
+                      />
+                      <label class="custom-control-label" for="tv">
+                        Cek Urin
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        class="custom-control-input"
+                        id="kamar-mandi"
+                        type="checkbox"
+                        checked=""
+                      />
+                      <label class="custom-control-label" for="kamar-mandi">
+                        Swab COVID-19
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Resep Obat
+                  </label>
+                  <div class="col-sm-7">
+                    <textarea
+                      class="form-control"
+                      id="inputEmail3"
+                      type="text"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="text-right">
+                <button
+                  class="btn btn-sm btn-outline-secondary px-3"
+                  type="button"
+                  data-dismiss="modal"
+                >
+                  Batal
+                </button>
+                <button
+                  class="btn btn-sm btn-outline-primary ml-2 px-3"
+                  type="button"
+                >
+                  Simpan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script src="../../../components/libraries/helper.js"></script>
     <script src="../../../components/config/page-config.js"></script>

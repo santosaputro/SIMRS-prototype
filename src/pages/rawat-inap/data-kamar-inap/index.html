@@ -43,13 +43,115 @@
       <div class="main-content-wrap sidenav-open d-flex flex-column">
         <div class="main-content">
           <!-- Breadcrumb -->
-          <div id="breadcrumb"></div>
+          <div>
+            <div id="breadcrumb"></div>
+            <div style="position: absolute; top: 32px; right: 31px">
+              <div
+                class="btn btn-sm btn-outline-primary px-3"
+                data-toggle="modal"
+                data-target="#exampleModal"
+              >
+                Entry Kamar
+              </div>
+            </div>
+          </div>
 
           <!-- main content here -->
           <div class="row" id="app-main">
             <div class="col-12">
               <div class="card">
-                <div class="card-body">This is main content</div>
+                <div class="card-body">
+                  <div class="ul-widget__head">
+                    <div class="ul-widget__head-label">
+                      <h3 class="ul-widget__head-title">Data Kamar</h3>
+                    </div>
+                    <div class="ul-widget__head-toolbar">
+                      <div class="form-group">
+                        <select class="custom-select" id="filter">
+                          <option value="" disabled selected>
+                            -- Pilih Jenis Kamar --
+                          </option>
+                          <option value="umum">Anggrek</option>
+                          <option value="umum">Melati</option>
+                          <option value="umum">Mawar</option>
+                          <option value="umum">Kantil</option>
+                          <option value="umum">Kenanga</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">No</th>
+                          <th scope="col">Jenis Kamar</th>
+                          <th scope="col">Golongan Kamar</th>
+                          <th scope="col">Nomor Kamar</th>
+                          <th scope="col">Biaya</th>
+                          <th scope="col">Fasilitas</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr scope="row">
+                          <td>1</td>
+                          <td>Anggrek</td>
+                          <td>VIP</td>
+                          <td>101</td>
+                          <td>Rp. 700.000/hari</td>
+                          <td>
+                            <div
+                              title="Bad Pasien, Bad Penunggu, Ac, TV, Kamar Mandi, Meja Kerja"
+                            >
+                              Bad Pasien, Bad Penungggu, Ac, TV...
+                            </div>
+                          </td>
+                        </tr>
+                        <tr scope="row">
+                          <td>2</td>
+                          <td>Anggrek</td>
+                          <td>Kelas I</td>
+                          <td>102</td>
+                          <td>Rp. 500.000/hari</td>
+                          <td>
+                            <div
+                              title="Bad Pasien, Bad Penunggu, Ac, TV, Kamar Mandi"
+                            >
+                              Bad Pasien, Bad Penungggu, Ac, TV...
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- paginations -->
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">«</span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">»</span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
               </div>
             </div>
           </div>
@@ -60,6 +162,162 @@
         <div class="app-footer" id="app-footer"></div>
       </div>
     </div>
+
+    <!-- Modal -->
+    <section>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="add modal"
+        data-backdrop="static"
+        data-keyboard="false"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="add modal">Entry Kamar</h5>
+              <button
+                class="close"
+                type="button"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Jenis Kamar
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="text"
+                      value="Anggrek"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Golongan Kamar
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="text"
+                      value="VIP"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Nomor Kamar
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="text"
+                      value="101"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Biaya
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="text"
+                      value="700.000"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Fasilitas
+                  </label>
+                  <div class="col-sm-7">
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        class="custom-control-input"
+                        id="bad-pasien"
+                        type="checkbox"
+                        checked
+                      />
+                      <label class="custom-control-label" for="bad-pasien">
+                        Bad Pasien
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        class="custom-control-input"
+                        id="bad-penunggu"
+                        type="checkbox"
+                        checked
+                      />
+                      <label class="custom-control-label" for="bad-penunggu">
+                        Bad Penunggu
+                      </label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        class="custom-control-input"
+                        id="ac"
+                        type="checkbox"
+                      />
+                      <label class="custom-control-label" for="ac">Ac</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        class="custom-control-input"
+                        id="tv"
+                        type="checkbox"
+                      />
+                      <label class="custom-control-label" for="tv">TV</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        class="custom-control-input"
+                        id="kamar-mandi"
+                        type="checkbox"
+                        checked
+                      />
+                      <label class="custom-control-label" for="kamar-mandi">
+                        Kamar Mandi
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-right">
+                <button
+                  class="btn btn-sm btn-outline-secondary px-3"
+                  type="button"
+                  data-dismiss="modal"
+                >
+                  Batal
+                </button>
+                <button
+                  class="btn btn-sm btn-outline-primary ml-2 px-3"
+                  type="button"
+                >
+                  Simpan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script src="../../../components/libraries/helper.js"></script>
     <script src="../../../components/config/page-config.js"></script>

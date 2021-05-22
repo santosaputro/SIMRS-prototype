@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" dir="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SIMRS</title>
+    <link
+      rel="stylesheet"
+      href="../../../../assets/templates//css/plugins/tempusdominus-bootstrap-4.min.css"
+    />
+    <link
+      href="../../../../assets/templates/css/themes/lite-purple.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../../../../assets/templates/css/plugins/perfect-scrollbar.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="../../../../assets/templates/css/plugins/toastr.css"
+    />
+
+    <!-- <link rel="stylesheet" href="../../../../assets/templates/css/custom-style.css" /> -->
+    <script>
+      const originPath = "../../../../";
+    </script>
+    <script src="../../../../assets/templates/js/plugins/jquery-3.3.1.min.js"></script>
+    <script src="../../../../assets/templates/js/plugins/clipboard.min.js"></script>
+    <script src="../../../../components/libraries/libs.js"></script>
+  </head>
+
+  <body class="text-left">
+    <div class="app-admin-wrap layout-sidebar-large">
+      <!-- Main Header -->
+      <div class="main-header" id="app-header"></div>
+
+      <!-- sidebar-content -->
+      <div class="side-content-wrap" id="app-sidebar"></div>
+
+      <!-- Body Content -->
+      <div class="main-content-wrap sidenav-open d-flex flex-column">
+        <div class="main-content">
+          <!-- Breadcrumb -->
+          <div>
+            <div id="breadcrumb"></div>
+            <div style="position: absolute; top: 32px; right: 31px">
+              <div
+                class="btn btn-sm btn-outline-primary px-3"
+                data-toggle="modal"
+                data-target="#exampleModal1"
+              >
+                Entry Data Pasien
+              </div>
+            </div>
+          </div>
+
+          <!-- main content here -->
+          <div class="row" id="app-main">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="ul-widget__head">
+                    <div class="ul-widget__head-label">
+                      <h3 class="ul-widget__head-title">
+                        Detail Data Pasien Rawat Inap
+                      </h3>
+                    </div>
+                    <div class="ul-widget__head-toolbar">
+                      <div class="form-group">
+                        <select class="custom-select" id="filter">
+                          <option value="" disabled selected>
+                            -- Pilih Nama Pasieen --
+                          </option>
+                          <option value="Parto">Parto</option>
+                          <option value="Parman">Parman</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="table-responsive mb-3">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col" style="white-space: nowrap">No</th>
+                          <th scope="col" style="white-space: nowrap">
+                            Jenis Kamar
+                          </th>
+                          <th scope="col" style="white-space: nowrap">
+                            Golongan Kamar
+                          </th>
+                          <th scope="col" style="white-space: nowrap">
+                            Nomor Kamar
+                          </th>
+                          <th scope="col" style="white-space: nowrap">
+                            Nama Pasien
+                          </th>
+                          <th scope="col" style="white-space: nowrap">
+                            Alamat
+                          </th>
+                          <th scope="col" style="white-space: nowrap">
+                            Dokter Penanggung Jawab
+                          </th>
+                          <th scope="col" style="white-space: nowrap">
+                            Pembayaran
+                          </th>
+                          <th scope="col" style="white-space: nowrap">
+                            Tanggal Masuk
+                          </th>
+                          <th scope="col" style="white-space: nowrap">
+                            Jam Masuk
+                          </th>
+                          <th scope="col" style="white-space: nowrap">
+                            Tanggal Keluar
+                          </th>
+                          <th scope="col" style="white-space: nowrap">
+                            Jam Keluar
+                          </th>
+                          <th scope="col" style="white-space: nowrap">Opsi</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr scope="row">
+                          <td>1</td>
+                          <td>Anggrek</td>
+                          <td>VIP</td>
+                          <td>101</td>
+                          <td>Parto</td>
+                          <td style="white-space: nowrap">Jln Merdeka No. 1</td>
+                          <td>dr. Ratna</td>
+                          <td style="white-space: nowrap">Umum</td>
+                          <td>04/02/2021</td>
+                          <td>10:00</td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>
+                            <a
+                              href="#"
+                              data-toggle="modal"
+                              data-target="#exampleModal2"
+                              style="white-space: nowrap"
+                            >
+                              Pindah Kamar
+                            </a>
+                          </td>
+                        </tr>
+                        <tr scope="row">
+                          <td>2</td>
+                          <td>Anggrek</td>
+                          <td>Kelas I</td>
+                          <td>102</td>
+                          <td>Parman</td>
+                          <td style="white-space: nowrap">
+                            Jln Pahlawan No. 10
+                          </td>
+                          <td>dr. Ratna</td>
+                          <td style="white-space: nowrap">BPJS - Kelas I</td>
+                          <td>04/01/2021</td>
+                          <td>12:00</td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>
+                            <a
+                              href="#"
+                              data-toggle="modal"
+                              data-target="#exampleModal2"
+                              style="white-space: nowrap"
+                            >
+                              Pindah Kamar
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- paginations -->
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">«</span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">»</span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="flex-grow-1"></div>
+        <div class="app-footer" id="app-footer"></div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <section>
+      <div
+        class="modal fade"
+        id="exampleModal1"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="add modal"
+        data-backdrop="static"
+        data-keyboard="false"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="add modal">Entry Pasien</h5>
+              <button
+                class="close"
+                type="button"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Nomor Kamar
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="text"
+                      value="113"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Nama Pasien
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="text"
+                      value="Parto"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Dokter Penanggung Jawab
+                  </label>
+                  <div class="col-sm-7">
+                    <select class="custom-select" id="filter">
+                      <option value="" disabled selected>
+                        -- Pilih Dokter --
+                      </option>
+                      <option value="umum">dr. Ratna</option>
+                      <option value="bpjs">dr. Budiman</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Pembayaran
+                  </label>
+                  <div class="col-sm-7">
+                    <select class="custom-select" id="filter">
+                      <option value="" disabled selected>
+                        -- Pilih Pembayaran --
+                      </option>
+                      <option value="umum">Umum</option>
+                      <option value="bpjs">BPJS</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Tanggal Masuk
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="date"
+                      value="23/05/2021"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Jam Masuk
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="time"
+                      value="Parto"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="text-right">
+                <button
+                  class="btn btn-sm btn-outline-secondary px-3"
+                  type="button"
+                  data-dismiss="modal"
+                >
+                  Batal
+                </button>
+                <button
+                  class="btn btn-sm btn-outline-primary ml-2 px-3"
+                  type="button"
+                >
+                  Simpan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="exampleModal2"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="add modal"
+        data-backdrop="static"
+        data-keyboard="false"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="add modal">Pindah Kamar</h5>
+              <button
+                class="close"
+                type="button"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Nama Pasien
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="text"
+                      value="Parto"
+                      disabled
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Kamar Asli
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="text"
+                      value="Anggrek"
+                      disabled
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Kamar Tujuan
+                  </label>
+                  <div class="col-sm-7">
+                    <select class="custom-select" id="filter">
+                      <option value="" disabled selected>
+                        -- Pilih Kamar Tujuan --
+                      </option>
+                      <option value="umum">Anggrek</option>
+                      <option value="bpjs">Mawar</option>
+                      <option value="bpjs">Kantil</option>
+                      <option value="bpjs">Melati</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Nomor Kamar
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="text"
+                      value="113"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Tanggal Pindah
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="date"
+                      value="23/05/2021"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 pr-0 col-form-label" for="inputEmail3">
+                    Jam Pindah
+                  </label>
+                  <div class="col-sm-7">
+                    <input
+                      class="form-control"
+                      id="inputEmail3"
+                      type="time"
+                      value="Parto"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="text-right">
+                <button
+                  class="btn btn-sm btn-outline-secondary px-3"
+                  type="button"
+                  data-dismiss="modal"
+                >
+                  Batal
+                </button>
+                <button
+                  class="btn btn-sm btn-outline-primary ml-2 px-3"
+                  type="button"
+                >
+                  Simpan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="../../../../components/libraries/helper.js"></script>
+    <script src="../../../../components/config/page-config.js"></script>
+    <script src="../../../../components/templates/headers.js"></script>
+    <script src="../../../../components/templates/sidebar.js"></script>
+    <script src="../../../../components/templates/footer.js"></script>
+    <script src="../../../../assets/templates/js/plugins/bootstrap.bundle.min.js"></script>
+    <script src="../../../../assets/templates/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="../../../../assets/templates/js/scripts/script.min.js"></script>
+    <script src="../../../../assets/templates/js/scripts/sidebar.large.script.min.js"></script>
+    <script src="../../../../assets/templates/js/plugins/echarts.min.js"></script>
+    <script src="../../../../assets/templates/js/scripts/echart.options.min.js"></script>
+    <script src="../../../../assets/templates/js/scripts/customizer.script.min.js"></script>
+    <script src="../../../../assets/templates/js/plugins/toastr.min.js"></script>
+    <script src="../../../../assets/templates/js/plugins/moment.min.js"></script>
+    <script src="../../../../assets/templates/js/plugins/moment-local-id.js"></script>
+    <script src="../../../../assets/templates/js/plugins/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="../../../../assets/templates/js/plugins/jquery.mask.js"></script>
+  </body>
+</html>

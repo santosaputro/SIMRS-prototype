@@ -7,7 +7,7 @@
     <title>SIMRS</title>
     <link
       rel="stylesheet"
-      href="../../assets/templates/css/plugins/tempusdominus-bootstrap-4.min.css"
+      href="../../assets/templates//css/plugins/tempusdominus-bootstrap-4.min.css"
     />
     <link
       href="../../assets/templates/css/themes/lite-purple.css"
@@ -43,13 +43,222 @@
       <div class="main-content-wrap sidenav-open d-flex flex-column">
         <div class="main-content">
           <!-- Breadcrumb -->
-          <div id="breadcrumb"></div>
+          <div>
+            <div id="breadcrumb"></div>
+            <div style="position: absolute; top: 32px; right: 31px">
+              <div class="btn btn-sm btn-outline-primary px-3 print-invoice">
+                Print Invoice
+              </div>
+            </div>
+          </div>
 
           <!-- main content here -->
           <div class="row" id="app-main">
             <div class="col-12">
               <div class="card">
-                <div class="card-body">This is main content</div>
+                <div class="card-body">
+                  <div>
+                    <!-- -===== Print Area =======-->
+                    <div id="print-area">
+                      <div class="d-flex justify-content-between mb-3">
+                        <div>
+                          <table>
+                            <tr>
+                              <td>Nomor Pasien</td>
+                              <td class="pl-3">P0001</td>
+                            </tr>
+                            <tr>
+                              <td>Nama Pasien</td>
+                              <td class="pl-3">Parman</td>
+                            </tr>
+                            <tr>
+                              <td>Pembayaran</td>
+                              <td class="pl-3">BPJS - Kelas 1</td>
+                            </tr>
+                            <tr>
+                              <td>Plafon</td>
+                              <td class="pl-3">Rp. 8.000.000</td>
+                            </tr>
+                          </table>
+                        </div>
+
+                        <div>
+                          <table>
+                            <tr>
+                              <td>Tgl Invoice</td>
+                              <td class="pl-3">1/1/2021</td>
+                            </tr>
+                            <tr>
+                              <td>No Invoice</td>
+                              <td class="pl-3">INV20210101001</td>
+                            </tr>
+                            <tr>
+                              <td>Total Tagihan</td>
+                              <td class="pl-3">Rp. 1.610.000</td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+
+                      <h5 class="font-weight-normal">Detail Tagihan Layanan</h5>
+                      <div class="table-responsive mb-4">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th
+                                scope="col"
+                                style="white-space: nowrap; width: 1%"
+                              >
+                                No
+                              </th>
+                              <th scope="col">Tanggal</th>
+                              <th scope="col">Layanan</th>
+                              <th scope="col">Jumlah</th>
+                              <th scope="col">Satuan</th>
+                              <th scope="col">Biaya</th>
+                              <th scope="col">Deskripsi</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr scope="row">
+                              <td>1</td>
+                              <td>1/1/2021</td>
+                              <td>
+                                <div>Rawat Inap</div>
+                                <ul class="pl-3">
+                                  <li>Kelas 1</li>
+                                  <li>Tgl Masuk : 2021-01-01</li>
+                                  <li>Tgl Keluar: 2021-01-03</li>
+                                </ul>
+                              </td>
+                              <td>2 Hari</td>
+                              <td>Hari</td>
+                              <td>Rp. 1.000.000</td>
+                              <td>...</td>
+                            </tr>
+                            <tr scope="row">
+                              <td>2</td>
+                              <td>1/1/2021</td>
+                              <td>Biaya Dokter Rawat Inap</td>
+                              <td>2</td>
+                              <td>Hari</td>
+                              <td>Rp. 200.000</td>
+                              <td>...</td>
+                            </tr>
+                            <tr scope="row">
+                              <td>3</td>
+                              <td>1/1/2021</td>
+                              <td>
+                                <div>Biaya Laboratorium</div>
+                                <ul class="pl-3">
+                                  <li>Cek Darah</li>
+                                </ul>
+                              </td>
+                              <td>1</td>
+                              <td>-</td>
+                              <td>Rp. 100.000</td>
+                              <td>...</td>
+                            </tr>
+                            <tr scope="row">
+                              <td>4</td>
+                              <td>1/2/2021</td>
+                              <td>
+                                <div>Biaya Laboratorium</div>
+                                <ul class="pl-3">
+                                  <li>Cek Darah</li>
+                                </ul>
+                              </td>
+                              <td>1</td>
+                              <td>-</td>
+                              <td>Rp. 100.000</td>
+                              <td>...</td>
+                            </tr>
+                            <tr scope="row">
+                              <td>5</td>
+                              <td>1/2/2021</td>
+                              <td>
+                                <div>Biaya</div>
+                                <ul class="pl-3">
+                                  <li>Cek Darah</li>
+                                </ul>
+                              </td>
+                              <td>1</td>
+                              <td>-</td>
+                              <td>Rp. 100.000</td>
+                              <td>...</td>
+                            </tr>
+                            <tr scope="row">
+                              <td colspan="2"></td>
+                              <td colspan="3">Total</td>
+                              <td>Rp. 1.500.000</td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <h5 class="font-weight-normal">
+                        Detail Tagihan Biaya Obat
+                      </h5>
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr class="tableizer-firstrow">
+                              <th
+                                scope="col"
+                                style="white-space: nowrap; width: 1%"
+                              >
+                                No
+                              </th>
+                              <th scope="col">Tanggal</th>
+                              <th scope="col">Nama Obat</th>
+                              <th scope="col">Jumlah</th>
+                              <th scope="col">Satuan</th>
+                              <th scope="col">Biaya</th>
+                              <th scope="col">Deskripsi</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr scope="row">
+                              <td>1</td>
+                              <td>1/1/2021</td>
+                              <td>Paracetamol</td>
+                              <td>1</td>
+                              <td>Strip</td>
+                              <td>Rp. 10.000</td>
+                              <td>...</td>
+                            </tr>
+                            <tr scope="row">
+                              <td>2</td>
+                              <td>1/1/2021</td>
+                              <td>Infus</td>
+                              <td>1</td>
+                              <td>pcs</td>
+                              <td>Rp. 50.000</td>
+                              <td>...</td>
+                            </tr>
+                            <tr scope="row">
+                              <td>3</td>
+                              <td>1/2/2021</td>
+                              <td>Infus</td>
+                              <td>1</td>
+                              <td>pcs</td>
+                              <td>Rp. 50.000</td>
+                              <td>...</td>
+                            </tr>
+                            <tr scope="row">
+                              <td colspan="2"></td>
+                              <td colspan="3">Total</td>
+                              <td>Rp. 110.000</td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <!-- ==== / Print Area =====-->
+                  </div>
+                </div>
               </div>
             </div>
           </div>
