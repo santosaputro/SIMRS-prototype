@@ -1,6 +1,6 @@
 $("#app-header").html(`
   <div class="logo">
-    <img src="${newPath}assets/img/logo.png" alt="company-logo" />
+    <img src="${newPath}assets/img/logo-text-square.png" alt="company-logo" />
   </div>
   <div class="menu-toggle">
     <div></div>

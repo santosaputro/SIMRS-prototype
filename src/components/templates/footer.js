@@ -2,7 +2,6 @@ $("#app-footer").html(`
   <div
     class="
       footer-bottom
-      pt-3
       d-flex
       flex-column flex-sm-row
       align-items-center

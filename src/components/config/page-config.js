@@ -1,3 +1,5 @@
+"use strict";
+
 const port = location.port !== "";
 const endpoint = port
   ? "live server"
@@ -6,8 +8,6 @@ const endpoint = port
   : location.origin === "file://"
   ? "directory"
   : null;
-
-console.log(port);
 
 const pathArr = location.pathname.split("/");
 const pathLength =
@@ -22,6 +22,10 @@ const newPath =
 
 $(() => {
   setBreadcrumb();
+
+  $("#search-table-content-button").on("click", () =>
+    $("#table-content").show()
+  );
 });
 
 const setBreadcrumb = () =>
@@ -35,3 +39,19 @@ const setBreadcrumb = () =>
           title: "Home",
         }
   );
+
+var check = (arr) =>
+  arr
+    .map(
+      (e) => `<div class="form-check">
+<input
+  class="form-check-input"
+  id="${e.replace(/ /g, "-").toLowerCase()}"
+  type="checkbox"
+/>
+<label class="form-check-label" for="${e.replace(/ /g, "-").toLowerCase()}">
+  ${e}
+</label>
+</div>`
+    )
+    .join("");

@@ -39,6 +39,11 @@ const globalMenu = [
     ],
     icon: "i-File-Chart",
   },
+  {
+    name: "Static Data",
+    child: [{ name: "Daftar Harga", icon: "i-Split-Horizontal-2-Window" }],
+    icon: "i-File-Chart",
+  },
   { name: "Laboratorium", icon: "i-File-Chart" },
   { name: "Kasir", icon: "i-File-Chart" },
 ];
