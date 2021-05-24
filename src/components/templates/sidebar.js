@@ -59,7 +59,9 @@ const renderSidebarItem = () => {
       index > 0
         ? `${newPath}pages/${combineString(name)}`
         : originPathX === 0
-        ? "../"
+        ? endpoint === "github" && originPathX === 0
+          ? ""
+          : "./"
         : `../${newPath}`;
 
     parentItems.push(
