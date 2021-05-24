@@ -47,6 +47,15 @@
           <!-- Breadcrumb -->
           <div>
             <div id="breadcrumb"></div>
+            <div style="position: absolute; top: 32px; right: 31px">
+              <div
+                class="btn btn-sm btn-outline-primary px-3"
+                data-toggle="modal"
+                data-target="#exampleModal"
+              >
+                Entry Pemakaian Obat
+              </div>
+            </div>
           </div>
 
           <!-- main content here -->
@@ -119,6 +128,164 @@
         <div class="app-footer py-1" id="app-footer"></div>
       </div>
     </div>
+
+    <!-- Modal -->
+    <section>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="add modal"
+        data-backdrop="static"
+        data-keyboard="false"
+      >
+        <div
+          class="modal-dialog modal-dialog-centered modal-lg"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="add modal">Entry Pemakaian Obat</h5>
+              <button
+                class="close"
+                type="button"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row mb-3">
+                <div class="col-md-12 table-responsive">
+                  <table class="table">
+                    <thead class="bg-gray-200">
+                      <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Nama Obat</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Satuan</th>
+                        <th scope="col">Harga (Rp)</th>
+                        <th scope="col">Jumlah (Rp)</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>
+                          <input
+                            class="form-control form-control-sm"
+                            value="Panadol"
+                            type="text"
+                            placeholder="Item Name"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            class="form-control form-control-sm"
+                            value="10"
+                            type="number"
+                            placeholder="Unit Price"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            class="form-control form-control-sm"
+                            value="Box"
+                            type="text"
+                            placeholder="Unit"
+                          />
+                        </td>
+                        <td>100.000</td>
+                        <td>1.000.000</td>
+                        <td>
+                          <button
+                            class="btn btn-sm btn-outline-secondary float-right"
+                          >
+                            Hapus
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>
+                          <input
+                            class="form-control form-control-sm"
+                            value="Paramex"
+                            type="text"
+                            placeholder="Item Name"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            class="form-control form-control-sm"
+                            value="10"
+                            type="number"
+                            placeholder="Unit Price"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            class="form-control form-control-sm"
+                            value="Box"
+                            type="text"
+                            placeholder="Unit"
+                          />
+                        </td>
+                        <td>20.000</td>
+                        <td>2.000.000</td>
+                        <td>
+                          <button
+                            class="btn btn-sm btn-outline-secondary float-right"
+                          >
+                            Hapus
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button class="btn btn-sm btn-primary float-right mb-4">
+                    Tambah Baris
+                  </button>
+                </div>
+                <div class="col-md-12">
+                  <div
+                    class="invoice-summary invoice-summary-input float-right"
+                  >
+                    <p>Sub total (Rp): <span>3.000.000</span></p>
+                    <p class="d-flex align-items-center">
+                      Diskon(10%) (Rp):
+                      <span>300.000 </span>
+                    </p>
+                    <h5 class="font-weight-bold d-flex align-items-center">
+                      Grand Total (Rp):
+                      <span>2.700.000 </span>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="text-right">
+                <button
+                  class="btn btn-sm btn-outline-secondary px-3"
+                  type="button"
+                  data-dismiss="modal"
+                >
+                  Batal
+                </button>
+                <button
+                  class="btn btn-sm btn-outline-primary ml-2 px-3"
+                  type="button"
+                >
+                  Simpan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script src="../../../components/libraries/helper.js"></script>
     <script src="../../../components/config/page-config.js"></script>
