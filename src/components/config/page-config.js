@@ -10,11 +10,10 @@ const endpoint = port
   : null;
 
 const pathArr = location.pathname.split("/");
-const pathLength =
-  endpoint === "github" ? pathArr.length - 4 : pathArr.length - 3;
+
 const newPath =
-  pathLength > 0
-    ? Array(pathLength)
+  originPathX > 0
+    ? Array(originPathX)
         .fill("")
         .map(() => "../")
         .join("")
@@ -26,19 +25,30 @@ $(() => {
   $("#search-table-content-button").on("click", () =>
     $("#table-content").show()
   );
+
+  // console.log({ originPath, newPath: pathArr.length });
 });
 
-const setBreadcrumb = () =>
-  breadcrumb(
-    pathLength < 0
+const setBreadcrumb = () => {
+  let items = [{ url: `../${newPath}`, title: "Home" }];
+  pathArr.map((e, i) => {
+    if (i > 3 && e !== "")
+      items.push({ url: `../../${e}`, title: capitalizeTitle(e) });
+  });
+  items.splice(-1, 1);
+
+  return breadcrumb(
+    originPathX < 0
       ? { active: "Home" }
       : {
           active: capitalizeTitle(pathArr[pathArr.length - 2]),
-          pages: "home",
-          url: `../${newPath}`,
-          title: "Home",
+          pages:
+            pathArr.length > 6
+              ? items
+              : [{ url: `../${newPath}`, title: "Home" }],
         }
   );
+};
 
 var check = (arr) =>
   arr

@@ -1,3 +1,5 @@
+"use strict";
+
 const capitalizeTitle = (string) =>
   string
     .split("")
@@ -7,7 +9,6 @@ const capitalizeTitle = (string) =>
 
 const pathSeparation = (length, endpoint) => {
   const pathArrs = location.pathname.split("/");
-  console.log(length);
 
   if (endpoint && endpoint === "directory") {
     console.log(1, "xxx");
@@ -21,16 +22,20 @@ const pathSeparation = (length, endpoint) => {
   }
 };
 
-const breadcrumb = ({ pages, url, title, active }) =>
-  $("#breadcrumb").html(`
+const breadcrumb = ({ pages, active }) => {
+  const items =
+    pages !== "" && pages.length > 0
+      ? pages
+          .map(({ url, title }) => `<li><a href="${url}">${title}</a></li>`)
+          .join("")
+      : "";
+
+  return $("#breadcrumb").html(`
     <div class="breadcrumb">
       <ul>
-        ${
-          pages && pages !== ""
-            ? `<li><a id="${pages}" href="${url}">${title}</a></li>`
-            : ""
-        }
+        ${items}
         <li>${active}</li>
       </ul>
     </div>
     <div class="separator-breadcrumb border-top"></div>`);
+};
