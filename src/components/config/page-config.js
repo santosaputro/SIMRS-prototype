@@ -25,20 +25,17 @@ $(() => {
   $("#search-table-content-button").on("click", () =>
     $("#table-content").show()
   );
-
-  // console.log({ originPath, newPath: pathArr.length });
 });
 
 const setBreadcrumb = () => {
   let items = [{ url: `../${newPath}`, title: "Home" }];
   pathArr.map((e, i) => {
-    if (i > 3 && e !== "")
+    if (i > 3 && i < pathArr.length - 2 && e !== "")
       items.push({ url: `../../${e}`, title: capitalizeTitle(e) });
   });
-  items.splice(-1, 1);
 
   return breadcrumb(
-    originPathX < 0
+    originPathX < 1
       ? { active: "Home" }
       : {
           active: capitalizeTitle(pathArr[pathArr.length - 2]),

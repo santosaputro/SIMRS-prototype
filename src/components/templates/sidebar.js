@@ -56,7 +56,11 @@ const renderSidebarItem = () => {
     const active = false;
     const childTarget = child && combineString(name);
     const urlTarget =
-      index > 0 ? `${newPath}pages/${combineString(name)}` : `../${newPath}`;
+      index > 0
+        ? `${newPath}pages/${combineString(name)}`
+        : originPathX === 0
+        ? "../"
+        : `../${newPath}`;
 
     parentItems.push(
       sidebarParentItem({ active, child, childTarget, urlTarget, name, icon })

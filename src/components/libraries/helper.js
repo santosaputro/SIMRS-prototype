@@ -7,24 +7,9 @@ const capitalizeTitle = (string) =>
     .join("")
     .replace(/-/g, " ");
 
-const pathSeparation = (length, endpoint) => {
-  const pathArrs = location.pathname.split("/");
-
-  if (endpoint && endpoint === "directory") {
-    console.log(1, "xxx");
-    return pathArrs[pathArrs.length - 2];
-  } else {
-    console.log(2, "xxx");
-    return Array(length)
-      .fill("")
-      .map(() => "../")
-      .join("");
-  }
-};
-
-const breadcrumb = ({ pages, active }) => {
+const breadcrumb = ({ active, pages }) => {
   const items =
-    pages !== "" && pages.length > 0
+    pages && pages !== "" && pages.length > 0
       ? pages
           .map(({ url, title }) => `<li><a href="${url}">${title}</a></li>`)
           .join("")
